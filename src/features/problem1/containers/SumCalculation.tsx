@@ -93,6 +93,24 @@ const SumCalculation = () => {
                                     <CardContent>
                                         <SumCalculationBenchmark benchmarkData={results}/>
                                     </CardContent>
+                                    <Divider />
+                                    <CardContent>
+                                        <Typography variant="h6" className="font-extrabold">Code location:</Typography>
+                                        <Box
+                                            component="pre"
+                                            sx={{
+                                                backgroundColor: '#f5f5f5',
+                                                padding: 2,
+                                                borderRadius: 1,
+                                                overflowX: 'auto',
+                                                whiteSpace: 'pre-wrap',
+                                                fontFamily: 'monospace',
+                                                fontSize: '0.875rem',
+                                            }}
+                                        >
+                                            <code>/src/features/problem1/hooks/useNumberSumCalculation.ts</code>
+                                        </Box>
+                                    </CardContent>
                                 </Card>
                             )}
                         </Stack>
