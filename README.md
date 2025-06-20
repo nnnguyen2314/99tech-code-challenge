@@ -52,3 +52,7 @@ export default tseslint.config({
   },
 })
 ```
+
+## Run this app to see how all problems solved
+1. Run `npm install` to install all dependencies (node_modules)
+2. Run `npm run dev` to run locally the application
