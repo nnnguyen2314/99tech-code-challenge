@@ -4,12 +4,13 @@ import {
     MenuItem,
     TextField,
     Typography,
-    CircularProgress,
+    CircularProgress, Avatar, Stack,
 } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import useTokenPrices from '../hooks/useTokenPrices';
 import { useMemo, useState } from 'react';
 import type {SwapFormValues} from "../misc/types.ts";
+import {getTokenIconUrl} from "../misc/tokenUtils.ts";
 
 const SwapForm = () => {
     const { prices, loading } = useTokenPrices();
@@ -71,7 +72,14 @@ const SwapForm = () => {
                                 <TextField select label="From Token" {...field} fullWidth>
                                     {tokenOptions.map(token => (
                                         <MenuItem key={token} value={token}>
-                                            {token}
+                                            <Stack direction="row" alignItems="center" spacing={1}>
+                                                <Avatar
+                                                    src={getTokenIconUrl(token)}
+                                                    sx={{ width: 20, height: 20 }}
+                                                    alt={token}
+                                                />
+                                                <span>{token}</span>
+                                            </Stack>
                                         </MenuItem>
                                     ))}
                                 </TextField>
@@ -85,10 +93,18 @@ const SwapForm = () => {
                                 <TextField select label="To Token" {...field} fullWidth>
                                     {tokenOptions.map(token => (
                                         <MenuItem key={token} value={token}>
-                                            {token}
+                                            <Stack direction="row" alignItems="center" spacing={1}>
+                                                <Avatar
+                                                    src={getTokenIconUrl(token)}
+                                                    sx={{ width: 20, height: 20 }}
+                                                    alt={token}
+                                                />
+                                                <span>{token}</span>
+                                            </Stack>
                                         </MenuItem>
                                     ))}
                                 </TextField>
+
                             )}
                         />
                         <TextField
